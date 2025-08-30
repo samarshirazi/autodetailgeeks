@@ -10,6 +10,7 @@ A modern, responsive website for AutoDetailGeeks - Edmonton's premier auto detai
 - **Service Showcase**: Detailed service pages with pricing and packages
 - **Gallery**: Before/after showcase with filtering capabilities
 - **Contact Forms**: Professional booking system with form validation
+- **Live Chat Widget**: LeadConnector chat widget for instant customer communication
 - **Performance**: Fast loading times with optimized assets
 
 ## 🛠️ Tech Stack
