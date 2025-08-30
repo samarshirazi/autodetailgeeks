@@ -390,9 +390,9 @@ const Services: React.FC = () => {
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Service
               </Link>
-              <Link to="/contact" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-neutral-900">
-                Get Custom Quote
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Link to="/contact" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-neutral-900 space-x-2">
+                <span>Get Custom Quote</span>
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </motion.div>

@@ -157,9 +157,9 @@ const Home: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/services" className="btn-primary">
-              View All Services
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Link to="/services" className="btn-primary space-x-2">
+              <span>View All Services</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -200,9 +200,9 @@ const Home: React.FC = () => {
                 </div>
               </div>
               <div className="mt-8">
-                <Link to="/gallery" className="btn-primary">
-                  View Full Gallery
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                <Link to="/gallery" className="btn-primary space-x-2">
+                  <span>View Full Gallery</span>
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
