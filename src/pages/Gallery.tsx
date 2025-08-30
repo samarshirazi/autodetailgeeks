@@ -10,6 +10,7 @@ import {
   Shield,
   Wrench
 } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Gallery: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -155,25 +156,29 @@ const Gallery: React.FC = () => {
                   <div className="relative">
                     <div className="grid grid-cols-2 gap-0">
                       {/* Before */}
-                      <div className="relative aspect-square bg-gradient-to-br from-neutral-300 to-neutral-400">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <p className="text-neutral-600 font-semibold mb-1">BEFORE</p>
-                            <p className="text-neutral-500 text-sm">Image Coming Soon</p>
-                          </div>
-                        </div>
+                      <div className="relative aspect-square overflow-hidden">
+                        <OptimizedImage
+                          src={`https://picsum.photos/400/400?random=${item.id * 2 - 1}`}
+                          alt={`${item.title} - Before`}
+                          className="w-full h-full object-cover"
+                          width={400}
+                          height={400}
+                          loading="lazy"
+                        />
                         <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                           Before
                         </div>
                       </div>
                       {/* After */}
-                      <div className="relative aspect-square bg-gradient-to-br from-primary-100 to-primary-200">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <p className="text-primary-700 font-semibold mb-1">AFTER</p>
-                            <p className="text-primary-600 text-sm">Image Coming Soon</p>
-                          </div>
-                        </div>
+                      <div className="relative aspect-square overflow-hidden">
+                        <OptimizedImage
+                          src={`https://picsum.photos/400/400?random=${item.id * 2}`}
+                          alt={`${item.title} - After`}
+                          className="w-full h-full object-cover"
+                          width={400}
+                          height={400}
+                          loading="lazy"
+                        />
                         <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                           After
                         </div>
