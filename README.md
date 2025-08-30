@@ -65,6 +65,17 @@ A modern, responsive website for AutoDetailGeeks - Edmonton's premier auto detai
    npm run preview
    ```
 
+## 🔧 Deployment
+
+The project includes configuration files for various hosting platforms:
+
+- **Netlify**: `public/_redirects` handles client-side routing
+- **Vercel**: `public/vercel.json` configures SPA routing  
+- **Apache**: `public/.htaccess` for traditional web servers
+- **Vite Dev Server**: Configured with `historyApiFallback` for local development
+
+All configurations ensure that refreshing pages on routes like `/services` or `/about` will correctly serve the React app instead of showing 404 errors.
+
 ## 📊 SEO Features
 
 - Semantic HTML structure
