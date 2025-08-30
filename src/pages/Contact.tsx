@@ -12,6 +12,7 @@ import {
   MessageCircle,
   Car
 } from 'lucide-react';
+import { sendToGHL } from '../services/ghl-webhook';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -49,11 +50,36 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      // Send to GoHighLevel webhook
+      const result = await sendToGHL({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        vehicle: formData.carType,
+        service: formData.service,
+        preferred_date: formData.date,
+        message: formData.message,
+        source: 'Contact Page Form',
+        page_url: window.location.href
+      });
+
+      if (result.success) {
+        console.log('Successfully submitted to GoHighLevel');
+      } else {
+        console.error('GHL submission error:', result.error);
+      }
+      
+      // Always show success to user (even if GHL fails, we don't want to confuse the customer)
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Still show success to user
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   if (isSubmitted) {
