@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useReducedMotion } from '../hooks/useReducedMotion';
 import { 
   Car, 
   Sparkles, 
@@ -14,6 +15,8 @@ import {
 } from 'lucide-react';
 
 const Home: React.FC = () => {
+  const shouldReduceMotion = useReducedMotion();
+  
   const services = [
     {
       icon: <Sparkles className="w-8 h-8" />,
@@ -90,9 +93,9 @@ const Home: React.FC = () => {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           >
             <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl mb-6">
               Edmonton's Premium

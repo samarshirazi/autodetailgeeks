@@ -17,6 +17,22 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', system-ui, sans-serif;
   }
+
+  /* Mobile Performance Optimizations */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: auto; /* Disable smooth scrolling on mobile for better performance */
+    }
+    
+    /* Reduce motion for mobile users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  }
 }
 
 @layer components {
@@ -42,5 +58,16 @@
   
   .text-gradient {
     @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  /* Mobile-specific component optimizations */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+      @apply hover:transform-none; /* Remove transform on mobile for better performance */
+    }
+    
+    .card {
+      @apply hover:transform-none hover:shadow-card; /* Reduce shadow/transform complexity on mobile */
+    }
   }
 }
