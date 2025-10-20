@@ -3,16 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const Home = lazy(() => import('./pages/Home'));
+import Home from './pages/Home';
 const Services = lazy(() => import('./pages/Services'));
 const About = lazy(() => import('./pages/About'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-const LoadingFallback: React.FC = () => (
-  <div className="py-20 text-center text-neutral-500">Loading...</div>
-);
+const LoadingFallback: React.FC = () => null;
 
 function App() {
   return (
