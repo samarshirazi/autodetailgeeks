@@ -304,8 +304,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-neutral-800 mb-1">Phone</h4>
-                      <a href="tel:+15875551234" className="text-neutral-600 hover:text-primary-500 transition-colors">
-                        (587) 555-1234
+                      <a href="tel:+14313746004" className="text-neutral-600 hover:text-primary-500 transition-colors">
+                        +1 431 374 6004
                       </a>
                       <p className="text-neutral-500 text-sm mt-1">Call or text anytime</p>
                     </div>
@@ -342,9 +342,13 @@ const Contact: React.FC = () => {
                     <div>
                       <h4 className="font-semibold text-neutral-800 mb-1">Hours</h4>
                       <div className="text-neutral-600 space-y-1">
-                        <p>Monday - Friday: 8AM - 6PM</p>
-                        <p>Saturday: 9AM - 5PM</p>
-                        <p>Sunday: Closed</p>
+                        <p>Monday: 07:00 AM - 11:30 PM</p>
+                        <p>Tuesday: 07:00 AM - 11:30 PM</p>
+                        <p>Wednesday: 07:00 AM - 11:30 PM</p>
+                        <p>Thursday: 07:00 AM - 11:30 PM</p>
+                        <p>Friday: 07:00 AM - 11:30 PM</p>
+                        <p>Saturday: 07:00 AM - 11:30 PM</p>
+                        <p>Sunday: 07:00 AM - 11:30 PM</p>
                       </div>
                     </div>
                   </div>
@@ -360,7 +364,7 @@ const Contact: React.FC = () => {
                   For urgent detailing needs or last-minute appointments, call us directly.
                 </p>
                 <a 
-                  href="tel:+15875551234" 
+                  href="tel:+14313746004" 
                   className="btn-secondary inline-flex items-center"
                 >
                   <Phone className="w-4 h-4 mr-2" />
