@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
-import logoPng from '../assets/mainlogo.png';
-import logoSvg from '../assets/mainlogo.svg';
+import logo from '../assets/mainlogo.png';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,18 +37,15 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <picture>
-              <source srcSet={logoSvg} type="image/svg+xml" />
-              <img
-                src={logoPng}
-                alt="AutoDetailGeeks logo"
-                width={48}
-                height={48}
-                loading="lazy"
-                decoding="async"
-                className="h-10 w-10 lg:h-12 lg:w-12 object-contain drop-shadow-sm"
-              />
-            </picture>
+            <img
+              src={logo}
+              alt="AutoDetailGeeks logo"
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
+              className="h-10 w-10 lg:h-12 lg:w-12 object-contain drop-shadow-sm"
+            />
             <span className="font-heading font-bold text-xl lg:text-2xl text-neutral-800">
               AutoDetailGeeks
             </span>
