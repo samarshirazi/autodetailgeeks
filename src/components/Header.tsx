@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import logo from '../assets/mainlogo.png';
+import logoSmall from '../assets/mainlogo-48.webp';
+import logoLarge from '../assets/mainlogo-96.webp';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,15 +39,31 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img
-              src={logo}
-              alt="AutoDetailGeeks logo"
-              width={48}
-              height={48}
-              loading="lazy"
-              decoding="async"
-              className="h-10 w-10 lg:h-12 lg:w-12 object-contain drop-shadow-sm"
-            />
+            <picture>
+              <source
+                srcSet={logoLarge}
+                media="(min-width: 1024px)"
+                type="image/webp"
+                width={48}
+                height={48}
+              />
+              <source
+                srcSet={logoSmall}
+                type="image/webp"
+                width={40}
+                height={40}
+              />
+              <img
+                src={logo}
+                alt="AutoDetailGeeks logo"
+                width={40}
+                height={40}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="h-10 w-10 lg:h-12 lg:w-12 object-contain drop-shadow-sm"
+              />
+            </picture>
             <span className="font-heading font-bold text-xl lg:text-2xl text-neutral-800">
               AutoDetailGeeks
             </span>

@@ -2,17 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font face declarations with font-display */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Poppins');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: local('Montserrat');
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     font-family: 'Poppins', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', system-ui, sans-serif;
   }
