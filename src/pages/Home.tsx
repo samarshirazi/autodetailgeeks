@@ -15,6 +15,9 @@ import {
 } from 'lucide-react';
 import heroVideo from '../assets/perfect.mp4';
 
+const heroPoster =
+  'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22 preserveAspectRatio=%22none%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23111a26%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230d3d8a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22600%22 fill=%22url(%23g)%22/%3E%3C/svg%3E';
+
 const Home: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   
@@ -97,6 +100,8 @@ const Home: React.FC = () => {
               loop
               muted
               playsInline
+              preload="metadata"
+              poster={heroPoster}
             >
               <source src={heroVideo} type="video/mp4" />
             </video>
