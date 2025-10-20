@@ -25,18 +25,25 @@
     </noscript>
     <link rel="preconnect" href="https://widgets.leadconnectorhq.com">
     <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com">
-    
-    <!-- LeadConnector Chat Widget -->
-    <script 
-      src="https://widgets.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="68b2857d90dffd7a243349f2"
-      async
-      defer
-    ></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const loadChatWidget = () => {
+        const script = document.createElement('script');
+        script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        script.dataset.resourcesUrl = 'https://widgets.leadconnectorhq.com/chat-widget/loader.js';
+        script.dataset.widgetId = '68b2857d90dffd7a243349f2';
+        script.async = true;
+        document.body.appendChild(script);
+      };
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadChatWidget, { timeout: 2000 });
+      } else {
+        window.addEventListener('load', () => setTimeout(loadChatWidget, 1500));
+      }
+    </script>
   </body>
 </html>
