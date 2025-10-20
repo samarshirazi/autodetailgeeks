@@ -81,8 +81,8 @@ const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-primary-500 mt-0.5" />
                 <div>
                   <span className="text-neutral-300">
-                    Edmonton, Alberta<br />
-                    Canada
+                    1104 75 St NW<br />
+                    Edmonton, AB T6K 2S2, Canada
                   </span>
                 </div>
               </div>

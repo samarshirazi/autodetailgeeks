@@ -330,7 +330,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-neutral-800 mb-1">Location</h4>
-                      <p className="text-neutral-600">Edmonton, Alberta</p>
+                      <p className="text-neutral-600">1104 75 St NW</p>
+                      <p className="text-neutral-600">Edmonton, AB T6K 2S2, Canada</p>
                       <p className="text-neutral-500 text-sm mt-1">Mobile service available</p>
                     </div>
                   </div>

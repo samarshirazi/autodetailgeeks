@@ -25,7 +25,7 @@ Every form submission sends the following data to GoHighLevel:
   "page_url": "https://autodetailgeeks.com/contact",
   "lead_source": "Website Form",
   "company": "AutoDetailGeeks",
-  "location": "Edmonton, Alberta"
+  "location": "1104 75 St NW, Edmonton, AB T6K 2S2, Canada"
 }
 ```
 
@@ -50,7 +50,7 @@ Every form submission sends the following data to GoHighLevel:
 - ✅ Additional Message/Requirements
 - ✅ Source Page
 - ✅ Timestamp
-- ✅ Location (Edmonton, Alberta)
+- ✅ Location (1104 75 St NW, Edmonton, AB T6K 2S2, Canada)
 
 ## 🔄 Integration Flow
 

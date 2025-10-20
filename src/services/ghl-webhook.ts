@@ -35,7 +35,7 @@ export const sendToGHL = async (formData: ContactFormData): Promise<WebhookRespo
       // Additional fields that GHL might find useful
       lead_source: 'Website Form',
       company: 'AutoDetailGeeks',
-      location: 'Edmonton, Alberta'
+      location: '1104 75 St NW, Edmonton, AB T6K 2S2, Canada'
     };
 
     console.log('Sending to GHL webhook:', webhookData);
