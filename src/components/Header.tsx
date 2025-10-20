@@ -67,11 +67,11 @@ const Header: React.FC = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <a 
-              href="tel:+15875551234" 
+              href="tel:+14313746004" 
               className="flex items-center space-x-2 text-primary-500 hover:text-primary-600 transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-semibold">(587) 555-1234</span>
+              <span className="font-semibold">+1 431 374 6004</span>
             </a>
             <Link to="/contact" className="btn-primary">
               Book Now
@@ -111,11 +111,11 @@ const Header: React.FC = () => {
               ))}
               <div className="pt-4 space-y-3">
                 <a 
-                  href="tel:+15875551234" 
+                  href="tel:+14313746004" 
                   className="flex items-center space-x-2 text-primary-500 hover:text-primary-600 transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  <span className="font-semibold">(587) 555-1234</span>
+                  <span className="font-semibold">+1 431 374 6004</span>
                 </a>
                 <Link 
                   to="/contact" 

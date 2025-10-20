@@ -39,11 +39,11 @@ const NotFound: React.FC = () => {
               If you're looking for our auto detailing services, we're here to help!
             </p>
             <a 
-              href="tel:+15875551234" 
+              href="tel:+14313746004" 
               className="inline-flex items-center space-x-2 text-primary-500 hover:text-primary-600 font-semibold transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span>Call us at (587) 555-1234</span>
+              <span>Call us at +1 431 374 6004</span>
             </a>
           </div>
         </motion.div>

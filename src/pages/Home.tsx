@@ -317,7 +317,7 @@ const Home: React.FC = () => {
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </Link>
-              <a href="tel:+15875551234" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-neutral-900">
+              <a href="tel:+14313746004" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-neutral-900">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
               </a>

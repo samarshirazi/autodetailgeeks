@@ -63,7 +63,7 @@ export default async function handler(req, res) {
         - Vehicle: ${carType || 'Not specified'}
         - Preferred Date: ${date || 'Flexible'}
         
-        If you need immediate assistance, please call us at (587) 555-1234.
+        If you need immediate assistance, please call us at +1 431 374 6004.
         
         Best regards,
         AutoDetailGeeks Team
