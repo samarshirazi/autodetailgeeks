@@ -110,7 +110,6 @@ const Home: React.FC = () => {
                 src="/hero-video-en.vtt"
                 srcLang="en"
                 label="English captions"
-                default
               />
             </video>
           )}
