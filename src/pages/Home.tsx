@@ -13,6 +13,7 @@ import {
   Phone,
   Calendar
 } from 'lucide-react';
+import heroVideo from '../assets/perfect.mp4';
 
 const Home: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -85,9 +86,22 @@ const Home: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with overlay */}
-        <div className="absolute inset-0 hero-gradient">
-          <div className="absolute inset-0 bg-black/50"></div>
+        {/* Background media with overlay */}
+        <div className="absolute inset-0">
+          {shouldReduceMotion ? (
+            <div className="hero-gradient w-full h-full" />
+          ) : (
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+          )}
+          <div className="absolute inset-0 bg-black/55" />
         </div>
         
         {/* Content */}
