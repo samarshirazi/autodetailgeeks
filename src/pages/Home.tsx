@@ -102,8 +102,16 @@ const Home: React.FC = () => {
               playsInline
               preload="metadata"
               poster={heroPoster}
+              aria-label="Showcase of AutoDetailGeeks detailing services"
             >
               <source src={heroVideo} type="video/mp4" />
+              <track
+                kind="captions"
+                src="/hero-video-en.vtt"
+                srcLang="en"
+                label="English captions"
+                default
+              />
             </video>
           )}
           <div className="absolute inset-0 bg-black/55" />

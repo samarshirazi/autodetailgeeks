@@ -21,14 +21,32 @@ const Footer: React.FC = () => {
               Edmonton's premier auto detailing service. We deliver unmatched detailing services with precision, care, and eco-friendly products.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-primary-500 transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a 
+                href="https://www.facebook.com/AutoDetailGeeks" 
+                className="text-neutral-400 hover:text-primary-500 transition-colors"
+                aria-label="Visit AutoDetailGeeks on Facebook"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-primary-500 transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a 
+                href="https://www.instagram.com/AutoDetailGeeks" 
+                className="text-neutral-400 hover:text-primary-500 transition-colors"
+                aria-label="Visit AutoDetailGeeks on Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-primary-500 transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a 
+                href="https://twitter.com/AutoDetailGeek" 
+                className="text-neutral-400 hover:text-primary-500 transition-colors"
+                aria-label="Visit AutoDetailGeeks on Twitter"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Twitter className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

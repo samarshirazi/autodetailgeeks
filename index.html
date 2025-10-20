@@ -30,13 +30,48 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      const enhanceChatWidgetAccessibility = () => {
+        const applyLabels = () => {
+          const closeBtn = document.querySelector('.lc_text-widget_prompt--prompt-close');
+          if (closeBtn && !closeBtn.getAttribute('aria-label')) {
+            closeBtn.setAttribute('aria-label', 'Dismiss chat prompt');
+            closeBtn.setAttribute('title', 'Dismiss chat prompt');
+          }
+
+          const bubbleButton = document.getElementById('lc_text-widget--btn');
+          if (bubbleButton && !bubbleButton.getAttribute('aria-label')) {
+            bubbleButton.setAttribute('aria-label', 'Open chat support');
+          }
+
+          return Boolean(closeBtn) && Boolean(bubbleButton);
+        };
+
+        if (applyLabels()) {
+          return;
+        }
+
+        const observer = new MutationObserver(() => {
+          if (applyLabels()) {
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+      };
+
       const loadChatWidget = () => {
         const script = document.createElement('script');
         script.src = 'https://widgets.leadconnectorhq.com/loader.js';
         script.dataset.resourcesUrl = 'https://widgets.leadconnectorhq.com/chat-widget/loader.js';
         script.dataset.widgetId = '68b2857d90dffd7a243349f2';
         script.async = true;
+        script.addEventListener('load', () => {
+          enhanceChatWidgetAccessibility();
+        });
         document.body.appendChild(script);
+
+        // Fallback in case the load event misses dynamically injected elements
+        setTimeout(enhanceChatWidgetAccessibility, 3000);
       };
 
       if ('requestIdleCallback' in window) {
