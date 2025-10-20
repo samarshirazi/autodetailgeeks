@@ -405,6 +405,118 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
+      {/* Google Maps Section */}
+      <section className="py-20 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-neutral-800 mb-4">
+              Visit Our Location
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+              Find us in Edmonton. We offer both in-shop service and mobile detailing at your convenience.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative rounded-2xl overflow-hidden shadow-2xl"
+            style={{ height: '500px' }}
+          >
+            <iframe
+              src="https://maps.google.com/maps?cid=10555550493001211076&output=embed"
+              loading="lazy"
+              width="100%"
+              height="100%"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="AutoDetailGeeks Location - 1104 75 St NW, Edmonton, AB"
+              allowFullScreen
+              className="w-full h-full border-0"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 pointer-events-none">
+              <div className="flex items-start space-x-4 text-white">
+                <MapPin className="w-6 h-6 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-heading font-bold text-xl mb-1">AutoDetailGeeks</h3>
+                  <p className="text-white/90">1104 75 St NW, Edmonton, AB T6K 2S2</p>
+                  <a
+                    href="https://maps.google.com/?cid=10555550493001211076"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center mt-3 px-4 py-2 bg-primary-500 hover:bg-primary-600 rounded-lg font-semibold transition-colors pointer-events-auto"
+                  >
+                    Get Directions
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Location Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="card p-6 text-center"
+            >
+              <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-7 h-7 text-primary-500" />
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-neutral-800 mb-2">
+                Easy to Find
+              </h3>
+              <p className="text-neutral-600">
+                Conveniently located in Northwest Edmonton with ample parking
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="card p-6 text-center"
+            >
+              <div className="w-14 h-14 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Car className="w-7 h-7 text-accent-500" />
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-neutral-800 mb-2">
+                Mobile Service
+              </h3>
+              <p className="text-neutral-600">
+                We come to you! Available throughout Edmonton and surrounding areas
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="card p-6 text-center"
+            >
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-7 h-7 text-green-500" />
+              </div>
+              <h3 className="font-heading font-semibold text-lg text-neutral-800 mb-2">
+                Flexible Hours
+              </h3>
+              <p className="text-neutral-600">
+                Open 7 days a week, 7 AM - 11:30 PM for your convenience
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
