@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font face declarations with font-display */
+/* Font face declarations with optimized font-display */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
+  font-display: optional; /* Prevents layout shifts, uses fallback if slow */
   src: local('Poppins');
 }
 
@@ -15,7 +15,7 @@
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400 800;
-  font-display: swap;
+  font-display: optional; /* Prevents layout shifts, uses fallback if slow */
   src: local('Montserrat');
 }
 

@@ -18,12 +18,16 @@
       /* Hero section critical styles */
       .hero-gradient{background:linear-gradient(to bottom right,#0f172a,#1e293b,#0f172a)}
       /* Prevent layout shifts from chat widget */
-      #lc_text-widget{contain:layout style;will-change:auto;position:fixed}
-      #lc_text-widget--btn{transform:translateZ(0);will-change:transform}
-      /* Force GPU acceleration for smoother animations */
+      #lc_text-widget{contain:layout style paint;will-change:auto;position:fixed;z-index:9999}
+      #lc_text-widget--btn{transform:translateZ(0);will-change:transform;contain:layout}
+      .lc_text-widget_prompt--avatar{width:40px;height:40px;will-change:auto}
+      /* Force GPU acceleration and prevent forced reflows */
       @keyframes slideIn{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,0,0)}}
-      /* Prevent FOUC */
+      /* Prevent FOUC and layout shifts */
+      #root{contain:layout style}
       #root>*{visibility:visible}
+      /* Optimize for LCP - prevent layout shifts in hero */
+      .hero-gradient{min-height:100vh;contain:layout}
     </style>
     
     <!-- Performance Optimizations - Preconnect to critical third-party origins -->
@@ -34,21 +38,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.bunny.net">
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
-      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=optional"
+      media="print"
+      onload="this.media='all'"
     >
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=optional"
       />
     </noscript>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register service worker for aggressive caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            console.log('SW registered:', registration);
+          }).catch((error) => {
+            console.log('SW registration failed:', error);
+          });
+        });
+      }
+    </script>
     <script>
       const enhanceChatWidgetAccessibility = () => {
         const applyLabels = () => {
