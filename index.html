@@ -10,24 +10,28 @@
 
     <!-- Critical CSS for above-the-fold content -->
     <style>
-      body{margin:0;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-      h1,h2,h3,h4,h5,h6{font-family:'Montserrat',system-ui,sans-serif}
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{margin:0;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#f8fafc}
+      h1,h2,h3,h4,h5,h6{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;line-height:1.2}
       .font-heading{font-family:'Montserrat',system-ui,sans-serif}
+      #root{min-height:100vh}
+      /* Hero section critical styles */
+      .hero-gradient{background:linear-gradient(to bottom right,#0f172a,#1e293b,#0f172a)}
       /* Prevent layout shifts from chat widget */
-      #lc_text-widget{contain:layout style;will-change:auto}
-      #lc_text-widget--btn{transform:translateZ(0)}
-      /* Force composited animations */
+      #lc_text-widget{contain:layout style;will-change:auto;position:fixed}
+      #lc_text-widget--btn{transform:translateZ(0);will-change:transform}
+      /* Force GPU acceleration for smoother animations */
       @keyframes slideIn{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,0,0)}}
+      /* Prevent FOUC */
+      #root>*{visibility:visible}
     </style>
     
-    <!-- Performance Optimizations -->
+    <!-- Performance Optimizations - Preconnect to critical third-party origins -->
+    <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossorigin>
+    <link rel="preconnect" href="https://services.leadconnectorhq.com" crossorigin>
+    <link rel="preconnect" href="https://stcdn.leadconnectorhq.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://widgets.leadconnectorhq.com">
-    <link rel="preconnect" href="https://services.leadconnectorhq.com">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com">
-    <link rel="dns-prefetch" href="https://services.leadconnectorhq.com">
     <link rel="dns-prefetch" href="https://fonts.bunny.net">
     <link
       rel="preload"

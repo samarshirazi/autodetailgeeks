@@ -55,7 +55,7 @@ export default defineConfig({
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       }
     },
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     sourcemap: false,
     chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096,
