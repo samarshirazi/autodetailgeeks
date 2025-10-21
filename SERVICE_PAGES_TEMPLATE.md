@@ -3,24 +3,30 @@
 ## Overview
 This document provides the complete template structure for creating SEO-optimized service pages for AutoDetail Geeks. Use this template to generate remaining service pages.
 
+## ✨ New Features (Updated 2025)
+All service pages now include:
+- **Consistent Fixed Header**: Same navigation header as the main React site, with Services dropdown menu
+- **Enhanced Scroll Animations**: Headings slide up with scale effect and gradient underlines
+- **Services Dropdown Menu**: All 14+ services accessible from any page (desktop hover, mobile click)
+- **Professional Animations**: Smooth transitions for cards, headings, and content sections
+- **Mobile-Optimized**: Full responsive design with touch-friendly interactions
+- **Accessibility**: Proper ARIA labels, keyboard navigation, reduced motion support
+
 ## Completed Pages
-✅ Ceramic Coating Edmonton (`ceramic-coating-edmonton.html`)
 ✅ Auto Detailing Edmonton (`auto-detailing-edmonton.html`)
-
-## Remaining Service Pages to Create
-
-1. **mobile-detailing-edmonton.html** - Mobile Detailing Services
-2. **headlight-restoration-edmonton.html** - Headlight Restoration & Polishing
-3. **interior-detailing-edmonton.html** - Interior Detailing & Cleaning
-4. **car-waxing-edmonton.html** - Car Waxing & Paint Sealing
-5. **paint-correction-edmonton.html** - Paint Correction & Scratch Removal
-6. **engine-detailing-edmonton.html** - Engine Bay Cleaning & Detailing
-7. **steam-cleaning-edmonton.html** - Steam Cleaning Services
-8. **seat-shampooing-edmonton.html** - Seat Shampooing & Stain Removal
-9. **clay-bar-treatment-edmonton.html** - Clay Bar Treatment
-10. **wheel-washing-edmonton.html** - Wheel & Tire Detailing
-11. **full-body-wash-edmonton.html** - Full Body Wash & Exterior Cleaning
-12. **odor-removal-edmonton.html** - Odor Elimination & Interior Scenting
+✅ Ceramic Coating Edmonton (`ceramic-coating-edmonton.html`)
+✅ Mobile Detailing Edmonton (`mobile-detailing-edmonton.html`)
+✅ Headlight Restoration Edmonton (`headlight-restoration-edmonton.html`)
+✅ Interior Detailing Edmonton (`interior-detailing-edmonton.html`)
+✅ Car Waxing Edmonton (`car-waxing-edmonton.html`)
+✅ Paint Correction Edmonton (`paint-correction-edmonton.html`)
+✅ Engine Detailing Edmonton (`engine-detailing-edmonton.html`)
+✅ Steam Cleaning Edmonton (`steam-cleaning-edmonton.html`)
+✅ Seat Shampooing Edmonton (`seat-shampooing-edmonton.html`)
+✅ Clay Bar Treatment Edmonton (`clay-bar-treatment-edmonton.html`)
+✅ Wheel Washing Edmonton (`wheel-washing-edmonton.html`)
+✅ Full Body Wash Edmonton (`full-body-wash-edmonton.html`)
+✅ Odor Removal Edmonton (`odor-removal-edmonton.html`)
 
 ---
 
@@ -47,9 +53,7 @@ This document provides the complete template structure for creating SEO-optimize
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.autodetailgeeks.ca/services/[service-slug].html">
 
-    <style>
-        /* COPY EXACT STYLES FROM ceramic-coating-edmonton.html OR auto-detailing-edmonton.html */
-    </style>
+    <link rel="stylesheet" href="/services/service-styles.css">
 
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
@@ -99,27 +103,68 @@ This document provides the complete template structure for creating SEO-optimize
     }
     </script>
 </head>
-<body>
-    <!-- NAVIGATION - Same for all pages -->
-    <header>
-        <nav class="container">
-            <h1>AutoDetail Geeks</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="tel:+14313746004">+1 431 374 6004</a></li>
-            </ul>
-        </nav>
+<body style="--hero-image: url('/images/[service-slug]-edmonton.jpg');">
+    <!-- NAVIGATION - Consistent header across all pages -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="/" class="brand">
+                <img src="/mainlogo.png" alt="AutoDetail Geeks logo" width="48" height="48">
+                <span>AutoDetail Geeks</span>
+            </a>
+            <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">&#9776;</button>
+            <nav id="primary-navigation" class="nav-links">
+                <a href="/">Home</a>
+                <a href="/gallery">Gallery</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+
+                <!-- Services Dropdown -->
+                <div class="services-dropdown">
+                    <button class="services-toggle" type="button" aria-expanded="false" aria-controls="services-menu">
+                        Services <span class="chevron">▼</span>
+                    </button>
+                    <div id="services-menu" class="services-menu">
+                        <a href="/services">All Services</a>
+                        <a href="/services/auto-detailing-edmonton.html">Auto Detailing</a>
+                        <a href="/services/ceramic-coating-edmonton.html">Ceramic Coating</a>
+                        <a href="/services/mobile-detailing-edmonton.html">Mobile Detailing</a>
+                        <a href="/services/interior-detailing-edmonton.html">Interior Detailing</a>
+                        <a href="/services/headlight-restoration-edmonton.html">Headlight Restoration</a>
+                        <a href="/services/paint-correction-edmonton.html">Paint Correction</a>
+                        <a href="/services/car-waxing-edmonton.html">Car Waxing</a>
+                        <a href="/services/engine-detailing-edmonton.html">Engine Detailing</a>
+                        <a href="/services/steam-cleaning-edmonton.html">Steam Cleaning</a>
+                        <a href="/services/seat-shampooing-edmonton.html">Seat Shampooing</a>
+                        <a href="/services/clay-bar-treatment-edmonton.html">Clay Bar Treatment</a>
+                        <a href="/services/wheel-washing-edmonton.html">Wheel Washing</a>
+                        <a href="/services/full-body-wash-edmonton.html">Full Body Wash</a>
+                        <a href="/services/odor-removal-edmonton.html">Odor Removal</a>
+                        <!-- Add class="active" to the current page's link -->
+                    </div>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="tel:+14313746004" class="phone-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +1 431 374 6004
+                    </a>
+                    <a href="/contact" class="btn-primary">Book Now</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION with enhanced animations -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>[SERVICE NAME] Edmonton</h1>
-            <p>[Compelling benefit-driven subtitle - 10-15 words]</p>
-            <a href="/contact" class="cta-button">Book Your [Service] Today</a>
+        <div class="hero-background" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>[SERVICE NAME] Edmonton</h1>
+                <p>[Compelling benefit-driven subtitle - 10-15 words]</p>
+                <a href="/contact" class="cta-button">Book Your [Service] Today</a>
+            </div>
         </div>
     </section>
 
@@ -261,6 +306,119 @@ This document provides the complete template structure for creating SEO-optimize
             <p>Serving Edmonton, Sherwood Park, St. Albert, Leduc, and surrounding areas</p>
         </div>
     </footer>
+
+    <!-- Enhanced JavaScript for header interactions and scroll animations -->
+    <script>
+      (function() {
+        // Mobile toggle
+        const toggle = document.querySelector('.mobile-toggle');
+        const navigation = document.getElementById('primary-navigation');
+        if (toggle && navigation) {
+          toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            navigation.classList.toggle('open');
+            toggle.innerHTML = expanded ? '&#9776;' : '&times;';
+          });
+        }
+
+        // Services dropdown
+        const servicesToggle = document.querySelector('.services-toggle');
+        const servicesMenu = document.querySelector('.services-menu');
+        if (servicesToggle && servicesMenu) {
+          // Desktop: hover behavior
+          const dropdown = document.querySelector('.services-dropdown');
+          dropdown.addEventListener('mouseenter', () => {
+            if (window.innerWidth >= 900) {
+              servicesToggle.setAttribute('aria-expanded', 'true');
+              servicesMenu.classList.add('open');
+            }
+          });
+          dropdown.addEventListener('mouseleave', () => {
+            if (window.innerWidth >= 900) {
+              servicesToggle.setAttribute('aria-expanded', 'false');
+              servicesMenu.classList.remove('open');
+            }
+          });
+
+          // Mobile: click behavior
+          servicesToggle.addEventListener('click', (e) => {
+            if (window.innerWidth < 900) {
+              e.stopPropagation();
+              const expanded = servicesToggle.getAttribute('aria-expanded') === 'true';
+              servicesToggle.setAttribute('aria-expanded', String(!expanded));
+              servicesMenu.classList.toggle('open');
+            }
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+              servicesToggle.setAttribute('aria-expanded', 'false');
+              servicesMenu.classList.remove('open');
+            }
+          });
+        }
+
+        // Header scroll effect
+        const header = document.querySelector('.site-header');
+        const setHeaderState = () => {
+          if (!header) return;
+          if (window.scrollY > 12) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+        };
+
+        window.addEventListener('scroll', setHeaderState, { passive: true });
+        setHeaderState();
+
+        // Enhanced scroll animations - headings slide up with scale effect
+        const animateSelectors = [
+          '.hero-content > *',
+          'section h2',
+          '.intro p',
+          '.services-grid .service-item',
+          '.benefit-card',
+          '.process-step',
+          '.faq-item',
+          '.related-services',
+          '.related-services li',
+          '.cta-section > *'
+        ];
+
+        const assigned = new Set();
+        let sequence = 0;
+        animateSelectors.forEach((selector) => {
+          document.querySelectorAll(selector).forEach((element) => {
+            if (assigned.has(element)) return;
+            assigned.add(element);
+            element.setAttribute('data-animate', '');
+            element.style.setProperty('--animate-delay', `${sequence * 0.08}s`);
+            sequence += 1;
+          });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.querySelectorAll('[data-animate]').forEach((element) => {
+          if (reduceMotion) {
+            element.classList.add('is-visible');
+            return;
+          }
+          observer.observe(element);
+        });
+      })();
+    </script>
 </body>
 </html>
 ```
