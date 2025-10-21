@@ -7,24 +7,113 @@
     <title>AutoDetailGeeks - Edmonton's Premium Auto Detailing Experts</title>
     <meta name="description" content="Professional auto detailing services in Edmonton. Interior cleaning, exterior polishing, ceramic coating, and paint correction. Book your appointment today!" />
     <meta name="keywords" content="auto detailing Edmonton, car detailing, ceramic coating, paint correction, car wash, vehicle detailing" />
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      body{margin:0;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      h1,h2,h3,h4,h5,h6{font-family:'Montserrat',system-ui,sans-serif}
+      .font-heading{font-family:'Montserrat',system-ui,sans-serif}
+      /* Prevent layout shifts from chat widget */
+      #lc_text-widget{contain:layout style;will-change:auto}
+      #lc_text-widget--btn{transform:translateZ(0)}
+      /* Force composited animations */
+      @keyframes slideIn{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,0,0)}}
+    </style>
     
-    <!-- Performance Optimizations -->
-    <link rel="preconnect" href="https://widgets.leadconnectorhq.com">
-    <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com">
-    
-    <!-- LeadConnector Chat Widget -->
-    <script 
-      src="https://widgets.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="68b2857d90dffd7a243349f2"
-      async
-      defer
-    ></script>
-    <script type="module" crossorigin src="/assets/index-ad359535.js"></script>
-    <link rel="stylesheet" href="/assets/index-79b8e3ce.css">
+    <!-- Performance Optimizations - Preconnect to critical third-party origins -->
+    <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossorigin>
+    <link rel="preconnect" href="https://services.leadconnectorhq.com" crossorigin>
+    <link rel="preconnect" href="https://stcdn.leadconnectorhq.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.bunny.net">
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      onload="this.rel='stylesheet'"
+    >
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+    <script type="module" crossorigin src="/assets/js/index-81961c10.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/js/vendor-d3205700.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/react-vendor-d355e951.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/framer-motion-30629ac0.js">
+    <link rel="stylesheet" href="/assets/css/index-b6cb86d4.css">
   </head>
   <body>
     <div id="root"></div>
     
+    <script>
+      const enhanceChatWidgetAccessibility = () => {
+        const applyLabels = () => {
+          const closeBtn = document.querySelector('.lc_text-widget_prompt--prompt-close');
+          if (closeBtn && !closeBtn.getAttribute('aria-label')) {
+            closeBtn.setAttribute('aria-label', 'Dismiss chat prompt');
+            closeBtn.setAttribute('title', 'Dismiss chat prompt');
+          }
+
+          const bubbleButton = document.getElementById('lc_text-widget--btn');
+          if (bubbleButton && !bubbleButton.getAttribute('aria-label')) {
+            bubbleButton.setAttribute('aria-label', 'Open chat support');
+          }
+
+          return Boolean(closeBtn) && Boolean(bubbleButton);
+        };
+
+        if (applyLabels()) {
+          return;
+        }
+
+        const observer = new MutationObserver(() => {
+          if (applyLabels()) {
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+      };
+
+      const loadChatWidget = () => {
+        const script = document.createElement('script');
+        script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        script.dataset.resourcesUrl = 'https://widgets.leadconnectorhq.com/chat-widget/loader.js';
+        script.dataset.widgetId = '68b2857d90dffd7a243349f2';
+        script.async = true;
+        script.defer = true;
+        script.addEventListener('load', () => {
+          enhanceChatWidgetAccessibility();
+          // Optimize chat widget images
+          setTimeout(() => {
+            const avatarImages = document.querySelectorAll('.lc_text-widget_prompt--avatar');
+            avatarImages.forEach(img => {
+              if (img.loading !== 'lazy') {
+                img.loading = 'lazy';
+              }
+              if (!img.width || img.width > 40) {
+                img.width = 40;
+                img.height = 40;
+              }
+            });
+          }, 500);
+        });
+        document.body.appendChild(script);
+
+        // Fallback in case the load event misses dynamically injected elements
+        setTimeout(enhanceChatWidgetAccessibility, 3000);
+      };
+
+      // Defer chat widget loading until after page is fully loaded and idle
+      // Increased timeout to 7 seconds to reduce impact on LCP
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadChatWidget, { timeout: 7000 });
+      } else {
+        window.addEventListener('load', () => setTimeout(loadChatWidget, 5000));
+      }
+    </script>
   </body>
 </html>

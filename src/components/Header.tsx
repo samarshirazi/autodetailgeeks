@@ -42,6 +42,8 @@ const Header: React.FC = () => {
     { name: 'Seat Shampooing', href: '/services/seat-shampooing-edmonton.html' },
     { name: 'Clay Bar Treatment', href: '/services/clay-bar-treatment-edmonton.html' },
     { name: 'Wheel Washing', href: '/services/wheel-washing-edmonton.html' },
+    { name: 'Full Body Wash', href: '/services/full-body-wash-edmonton.html' },
+    { name: 'Odor Removal', href: '/services/odor-removal-edmonton.html' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
