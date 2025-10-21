@@ -13,6 +13,11 @@
       body{margin:0;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
       h1,h2,h3,h4,h5,h6{font-family:'Montserrat',system-ui,sans-serif}
       .font-heading{font-family:'Montserrat',system-ui,sans-serif}
+      /* Prevent layout shifts from chat widget */
+      #lc_text-widget{contain:layout style;will-change:auto}
+      #lc_text-widget--btn{transform:translateZ(0)}
+      /* Force composited animations */
+      @keyframes slideIn{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,0,0)}}
     </style>
     
     <!-- Performance Optimizations -->
@@ -79,6 +84,19 @@
         script.defer = true;
         script.addEventListener('load', () => {
           enhanceChatWidgetAccessibility();
+          // Optimize chat widget images
+          setTimeout(() => {
+            const avatarImages = document.querySelectorAll('.lc_text-widget_prompt--avatar');
+            avatarImages.forEach(img => {
+              if (img.loading !== 'lazy') {
+                img.loading = 'lazy';
+              }
+              if (!img.width || img.width > 40) {
+                img.width = 40;
+                img.height = 40;
+              }
+            });
+          }, 500);
         });
         document.body.appendChild(script);
 
@@ -87,10 +105,11 @@
       };
 
       // Defer chat widget loading until after page is fully loaded and idle
+      // Increased timeout to 7 seconds to reduce impact on LCP
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadChatWidget, { timeout: 5000 });
+        requestIdleCallback(loadChatWidget, { timeout: 7000 });
       } else {
-        window.addEventListener('load', () => setTimeout(loadChatWidget, 3000));
+        window.addEventListener('load', () => setTimeout(loadChatWidget, 5000));
       }
     </script>
   </body>
