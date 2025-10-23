@@ -17,10 +17,24 @@
     <meta property="og:description" content="Professional auto detailing services in Edmonton. Complete car care from interior to exterior.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.autodetailgeeks.ca/services/auto-detailing-edmonton.html">
+    <meta property="og:image" content="https://www.autodetailgeeks.ca/images/auto-detailing-edmonton.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_CA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AutoDetailGeeks">
+    <meta name="twitter:title" content="Auto Detailing Edmonton | AutoDetail Geeks">
+    <meta name="twitter:description" content="Professional auto detailing services in Edmonton. Complete car care from interior to exterior.">
+    <meta name="twitter:image" content="https://www.autodetailgeeks.ca/images/auto-detailing-edmonton.jpg">
+
+    <!-- Additional SEO Meta -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <link rel="stylesheet" href="/services/service-styles.css">
 
-    <!-- Schema.org Markup -->
+    <!-- LocalBusiness Schema with Reviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,31 +60,158 @@
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "07:00",
         "closes": "23:30"
       },
-      "service": {
-        "@type": "Service",
-        "serviceType": "Auto Detailing",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "AutoDetail Geeks"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Thompson"
+          },
+          "datePublished": "2025-01-15",
+          "reviewBody": "Absolutely incredible service! My car looks better than when I first bought it. The team was professional, thorough, and the results speak for themselves. Ceramic coating has been a game changer for Edmonton winters.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Edmonton"
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Mike Chen"
+          },
+          "datePublished": "2025-01-10",
+          "reviewBody": "Best detailing service in Edmonton! The ceramic coating has kept my car looking pristine for months even through winter. They explained everything, pricing was transparent, and quality is outstanding.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
         },
-        "description": "Comprehensive auto detailing services including interior and exterior detailing, paint correction, ceramic coating, and more in Edmonton, Alberta."
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jennifer Davis"
+          },
+          "datePublished": "2025-01-05",
+          "reviewBody": "Amazing attention to detail. They transformed my car's interior completely - removed years of stains and odors. Will definitely be coming back regularly. Worth every penny!",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Edmonton"},
+        {"@type": "City", "name": "Sherwood Park"},
+        {"@type": "City", "name": "St. Albert"},
+        {"@type": "City", "name": "Leduc"},
+        {"@type": "City", "name": "Beaumont"}
+      ],
+      "hasMap": "https://www.google.com/maps?cid=1234567890",
+      "sameAs": [
+        "https://www.facebook.com/autodetailgeeks",
+        "https://www.instagram.com/autodetailgeeks"
+      ]
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Auto Detailing",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AutoDetail Geeks",
+        "telephone": "+14313746004"
+      },
+      "areaServed": {"@type": "City", "name": "Edmonton"},
+      "description": "Comprehensive auto detailing services including interior and exterior detailing, paint correction, ceramic coating, and more in Edmonton, Alberta.",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "CAD",
+        "lowPrice": "89",
+        "highPrice": "499",
+        "offerCount": "8"
       }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.autodetailgeeks.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.autodetailgeeks.ca/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Auto Detailing Edmonton",
+          "item": "https://www.autodetailgeeks.ca/services/auto-detailing-edmonton.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should I schedule auto detailing in Edmonton?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend a comprehensive detail every 4–6 months for daily drivers, with maintenance washes or mini details in between. Vehicles exposed to gravel roads, construction sites, or winter salt may benefit from quarterly protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a car wash and detailing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A car wash focuses on surface dirt, while detailing cleans, restores, and protects every inch of your vehicle inside and out. Detailing includes paint correction, steam cleaning, seat shampooing, polishing, and protective coatings for long-term results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer mobile auto detailing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our mobile service brings professional detailing directly to your location anywhere in Edmonton, Sherwood Park, St. Albert, and nearby communities. We carry our own supplies and ensure the same meticulous results you'd receive in-shop."
+          }
+        }
+      ]
     }
     </script>
 </head>

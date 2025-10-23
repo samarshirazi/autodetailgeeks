@@ -1,0 +1,25 @@
+REQUIRED IMAGES FOR SEO:
+
+Please add the following optimized WebP images (1200x630px for OG images, service images can be 1920x1080):
+
+1. og-image.jpg (1200x630) - Main social sharing image
+2. auto-detailing-edmonton.jpg - Auto detailing service showcase
+3. ceramic-coating-edmonton.jpg - Ceramic coating application
+4. mobile-detailing-edmonton.jpg - Mobile detailing van/service
+5. interior-detailing-edmonton.jpg - Interior cleaning work
+6. paint-correction-edmonton.jpg - Paint correction process
+7. headlight-restoration-edmonton.jpg - Before/after headlight
+8. car-waxing-edmonton.jpg - Waxing process
+9. engine-detailing-edmonton.jpg - Clean engine bay
+10. steam-cleaning-edmonton.jpg - Steam cleaning interior
+11. seat-shampooing-edmonton.jpg - Seat cleaning
+12. clay-bar-treatment-edmonton.jpg - Clay bar on paint
+13. wheel-washing-edmonton.jpg - Wheel detailing
+14. full-body-wash-edmonton.jpg - Full exterior wash
+15. odor-removal-edmonton.jpg - Interior sanitization
+
+All images should be:
+- Optimized for web (WebP format preferred)
+- Include actual work photos from your business
+- Show Edmonton-area vehicles and locations when possible
+- High quality but compressed for fast loading

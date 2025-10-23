@@ -8,6 +8,9 @@ const Services = lazy(() => import('./pages/Services'));
 const About = lazy(() => import('./pages/About'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const WinterCarDetailingEdmontonGuide = lazy(() => import('./pages/blog/WinterCarDetailingEdmontonGuide'));
+const CeramicCoatingVsWaxEdmonton = lazy(() => import('./pages/blog/CeramicCoatingVsWaxEdmonton'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const LoadingFallback: React.FC = () => null;
@@ -24,6 +27,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/winter-car-detailing-edmonton-guide" element={<WinterCarDetailingEdmontonGuide />} />
+            <Route path="/blog/ceramic-coating-vs-wax-edmonton" element={<CeramicCoatingVsWaxEdmonton />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

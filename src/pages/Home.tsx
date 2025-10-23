@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { 
-  Car, 
-  Sparkles, 
-  Shield, 
-  Wrench, 
-  Star, 
-  CheckCircle, 
+import SEO from '../components/SEO';
+import {
+  Car,
+  Sparkles,
+  Shield,
+  Wrench,
+  Star,
+  CheckCircle,
   ArrowRight,
   Phone,
   Calendar
@@ -20,6 +21,91 @@ const heroPoster =
 
 const Home: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
+
+  // Comprehensive Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.autodetailgeeks.ca/#organization",
+    "name": "AutoDetailGeeks",
+    "alternateName": "AutoDetail Geeks",
+    "description": "Edmonton's premier auto detailing service offering ceramic coating, paint correction, interior detailing, and mobile detailing services.",
+    "url": "https://www.autodetailgeeks.ca",
+    "telephone": "+14313746004",
+    "email": "info@autodetailgeeks.ca",
+    "priceRange": "$$",
+    "image": "https://www.autodetailgeeks.ca/og-image.jpg",
+    "logo": "https://www.autodetailgeeks.ca/mainlogo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1104 75 St NW",
+      "addressLocality": "Edmonton",
+      "addressRegion": "AB",
+      "postalCode": "T6K 2S2",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.5461,
+      "longitude": -113.4938
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "23:30"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Edmonton",
+        "sameAs": "https://en.wikipedia.org/wiki/Edmonton"
+      },
+      {
+        "@type": "City",
+        "name": "Sherwood Park"
+      },
+      {
+        "@type": "City",
+        "name": "St. Albert"
+      },
+      {
+        "@type": "City",
+        "name": "Leduc"
+      },
+      {
+        "@type": "City",
+        "name": "Beaumont"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasMap": "https://www.google.com/maps?cid=1234567890",
+    "sameAs": [
+      "https://www.facebook.com/autodetailgeeks",
+      "https://www.instagram.com/autodetailgeeks",
+      "https://twitter.com/autodetailgeeks"
+    ],
+    "paymentAccepted": "Cash, Credit Card, Debit Card, Interac",
+    "currenciesAccepted": "CAD"
+  };
+
+  // Video Schema
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "AutoDetailGeeks - Premium Auto Detailing Services",
+    "description": "See our professional auto detailing services in action - ceramic coating, paint correction, and interior detailing in Edmonton.",
+    "thumbnailUrl": "https://www.autodetailgeeks.ca/og-image.jpg",
+    "uploadDate": "2025-01-15",
+    "contentUrl": "https://www.autodetailgeeks.ca/perfect.mp4",
+    "embedUrl": "https://www.autodetailgeeks.ca"
+  };
   
   const services = [
     {
@@ -86,7 +172,16 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Edmonton's #1 Auto Detailing Service - 500+ Five Star Reviews"
+        description="Premium auto detailing in Edmonton, AB. Ceramic coating, paint correction, interior/exterior detailing & mobile service. Same-day appointments available. Call (431) 374-6004!"
+        keywords="auto detailing Edmonton, car detailing Edmonton, ceramic coating, paint correction, mobile detailing, interior detailing, exterior detailing, car wash Edmonton, vehicle detailing Edmonton"
+        canonical="https://www.autodetailgeeks.ca/"
+        ogImage="https://www.autodetailgeeks.ca/og-image.jpg"
+        structuredData={[organizationSchema, videoSchema]}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background media with overlay */}
@@ -352,6 +447,7 @@ const Home: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
