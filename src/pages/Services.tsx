@@ -26,7 +26,6 @@ const Services: React.FC = () => {
         "Steam cleaning of upholstery and fabrics", 
         "Leather conditioning and protection",
         "Dashboard and trim restoration",
-        "Stain and odor removal",
         "Window cleaning (interior)"
       ],
       pricing: {

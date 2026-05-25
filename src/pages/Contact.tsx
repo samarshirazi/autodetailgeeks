@@ -343,13 +343,13 @@ const Contact: React.FC = () => {
                     <div>
                       <h4 className="font-semibold text-neutral-800 mb-1">Hours</h4>
                       <div className="text-neutral-600 space-y-1">
-                        <p>Monday: 07:00 AM - 11:30 PM</p>
-                        <p>Tuesday: 07:00 AM - 11:30 PM</p>
-                        <p>Wednesday: 07:00 AM - 11:30 PM</p>
-                        <p>Thursday: 07:00 AM - 11:30 PM</p>
-                        <p>Friday: 07:00 AM - 11:30 PM</p>
-                        <p>Saturday: 07:00 AM - 11:30 PM</p>
-                        <p>Sunday: 07:00 AM - 11:30 PM</p>
+                        <p>Monday: Closed</p>
+                        <p>Tuesday: Closed</p>
+                        <p>Wednesday: Closed</p>
+                        <p>Thursday: Closed</p>
+                        <p>Friday: Closed</p>
+                        <p>Saturday: By appointment only</p>
+                        <p>Sunday: Closed (Fully booked)</p>
                       </div>
                     </div>
                   </div>
@@ -507,10 +507,10 @@ const Contact: React.FC = () => {
                 <Clock className="w-7 h-7 text-green-500" />
               </div>
               <h3 className="font-heading font-semibold text-lg text-neutral-800 mb-2">
-                Flexible Hours
+                By Appointment
               </h3>
               <p className="text-neutral-600">
-                Open 7 days a week, 7 AM - 11:30 PM for your convenience
+                Saturday by appointment only — book ahead to reserve your spot
               </p>
             </motion.div>
           </div>

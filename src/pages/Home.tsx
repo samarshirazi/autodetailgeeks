@@ -51,9 +51,10 @@ const Home: React.FC = () => {
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "07:00",
-      "closes": "23:30"
+      "dayOfWeek": ["Saturday"],
+      "opens": "00:00",
+      "closes": "23:59",
+      "description": "Saturday by appointment only"
     },
     "areaServed": [
       {

@@ -16,7 +16,6 @@ Please add the following optimized WebP images (1200x630px for OG images, servic
 12. clay-bar-treatment-edmonton.jpg - Clay bar on paint
 13. wheel-washing-edmonton.jpg - Wheel detailing
 14. full-body-wash-edmonton.jpg - Full exterior wash
-15. odor-removal-edmonton.jpg - Interior sanitization
 
 All images should be:
 - Optimized for web (WebP format preferred)

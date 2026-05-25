@@ -108,9 +108,9 @@ const Footer: React.FC = () => {
                 <Clock className="w-5 h-5 text-primary-500 mt-0.5" />
                 <div>
                   <span className="text-neutral-300">
-                    Mon-Fri: 8AM-6PM<br />
-                    Sat: 9AM-5PM<br />
-                    Sun: Closed
+                    Mon-Fri: Closed<br />
+                    Sat: By appointment only<br />
+                    Sun: Closed (Fully booked)
                   </span>
                 </div>
               </div>
